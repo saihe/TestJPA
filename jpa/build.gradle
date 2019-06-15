@@ -7,7 +7,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'test'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '12'
 
 configurations {
 	compileOnly {
@@ -20,11 +20,14 @@ repositories {
 }
 
 dependencies {
-	implementation module 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation module ('org.slf4j:slf4j-api:1.7.25')
 	implementation module ('ch.qos.logback:logback-core:1.2.3')
 	implementation module ('ch.qos.logback:logback-classic:1.2.3')
+	implementation module ('com.zaxxer:HikariCP:3.3.1')
+	implementation module ('net.sf.ucanaccess:ucanaccess:4.0.4')
+	implementation module ('com.healthmarketscience.jackcess:jackcess-encrypt:2.1.4')
 }
