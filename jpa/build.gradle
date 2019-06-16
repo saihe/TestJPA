@@ -27,7 +27,5 @@ dependencies {
 	implementation module ('org.slf4j:slf4j-api:1.7.25')
 	implementation module ('ch.qos.logback:logback-core:1.2.3')
 	implementation module ('ch.qos.logback:logback-classic:1.2.3')
-	implementation module ('com.zaxxer:HikariCP:3.3.1')
-	implementation module ('net.sf.ucanaccess:ucanaccess:4.0.4')
-	implementation module ('com.healthmarketscience.jackcess:jackcess-encrypt:2.1.4')
+	implementation module ('mysql:mysql-connector-java')
 }
