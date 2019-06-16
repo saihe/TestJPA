@@ -1,18 +1,19 @@
-package test.jpa.entity;
+package test.jpa.entities;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity
+/**
+ * 所属entity
+ */
 @Data
+@Entity
+@Table(name = "division")
 public class Division {
     /** ID. */
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
     /** 所属名. */
