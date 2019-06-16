@@ -2,22 +2,18 @@ package test.jpa.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Service;
-import test.jpa.entity.Employee;
-import test.jpa.proprety.FileOutputProperty;
-import test.jpa.repository.EmployeeRepository;
-import test.jpa.service.OutputEmployeeService;
+import test.jpa.entities.Employee;
+import test.jpa.propreties.FileOutputProperty;
+import test.jpa.repositories.EmployeeRepository;
+import test.jpa.services.OutputEmployeeService;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.OpenOption;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -38,16 +34,15 @@ public class OutputEmployeeServiceImpl extends FileOutputProperty implements Out
         try {
             List<Employee> employeeList = employeeRepository.findAll();
             employeeList.forEach(employee -> {
-                log.debug("社員コード：[{}]", employee.getEmployeeCode());
-                outputLines
+                log.debug("出力行：[{}]", employee.toString());
+                outputLines.add(employee.toString());
             });
             Files.write(
                     Paths.get(getPath(), getName())
+                    , outputLines
                     , StandardCharsets.UTF_8
-                    , new OpenOption() {
-                        StandardOpenOption.TRUNCATE_EXISTING
+                    , StandardOpenOption.TRUNCATE_EXISTING
                     , StandardOpenOption.CREATE
-                    }
             );
             log.info("出力処理正常終了");
         } catch (IOException e) {
