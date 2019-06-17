@@ -2,7 +2,7 @@
     <appender name="STDOUT"
               class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
-            <pattern>%d{yyyy/MM/dd HH:mm:ss.SSS}|%-5level|%class{0}.%M|${PID}|%msg%n</pattern>
+            <pattern>%d{yyyy/MM/dd HH:mm:ss.SSS} %-5level [%class{0}.%M] ${PID} %msg%n</pattern>
         </layout>
     </appender>
 

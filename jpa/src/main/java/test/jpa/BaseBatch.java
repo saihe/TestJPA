@@ -14,7 +14,7 @@ import test.jpa.propreties.FileOutputProperty;
 public class BaseBatch {
   /** ファイル出力プロパティ. */
   @Autowired
-  private FileOutputProperty fileOutputProperty;
+  protected FileOutputProperty fileOutputProperty;
 
   /**
    * アプリケーション終了
