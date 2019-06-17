@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://160.16.224.8:3306/test_jpa
+    username: Lamsadmin
+    password: Lamsadmin!
+    hikari:
+      idle-timeout: 10000
+  jpa:
+    database: MYSQL
+    hibernate:
+      ddl-auto: none
+      temp:
+        use_jdbc_metadata_defaults: false
+  properties:
+    hibernate:
+      dialect: org.hibernate.dialect.HSQLDialect
+
+file:
+  output:
+    path: /Users/kyohei/Documents/work/eclipse/TestJPA/jpa/files
+    name: output.csv
+    header: '"id","社員コード","社員名","所属名"'
